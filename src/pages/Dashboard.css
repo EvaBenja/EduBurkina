@@ -68,3 +68,30 @@
   .dash-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .dash-body-grid { grid-template-columns: 1fr; }
 }
+
+/* --- Sous-navigation espace élève --- */
+.eleve-tabs {
+  background: var(--indigo-deep);
+  border-top: 1px solid rgba(250, 243, 229, 0.12);
+}
+
+.eleve-tabs-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px 24px;
+}
+
+.eleve-tab {
+  white-space: nowrap;
+  color: rgba(250, 243, 229, 0.7);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+.eleve-tab.active {
+  background: var(--terracotta);
+  color: var(--white);
+}

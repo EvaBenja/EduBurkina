@@ -8,6 +8,8 @@ import { Auth } from "./pages/Auth";
 import { Catalog } from "./pages/Catalog";
 import { DashboardEleve } from "./pages/DashboardEleve";
 import { DashboardEnseignant } from "./pages/DashboardEnseignant";
+import { ArdoiseEleve } from "./pages/ArdoiseEleve";
+import { ChatEleve } from "./pages/ChatEleve";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,6 +43,22 @@ function Shell() {
               element={
                 <RequireAuth role="eleve">
                   <DashboardEleve />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/eleve/ardoise"
+              element={
+                <RequireAuth role="eleve">
+                  <ArdoiseEleve />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/eleve/chat"
+              element={
+                <RequireAuth role="eleve">
+                  <ChatEleve />
                 </RequireAuth>
               }
             />

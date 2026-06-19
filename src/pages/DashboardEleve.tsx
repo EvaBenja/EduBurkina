@@ -3,6 +3,8 @@ import "./Dashboard.css";
 import { useAuth } from "../context/AuthContext";
 import { Avatar } from "../icons/Avatar";
 import { BadgeGlyph, SubjectIcon } from "../icons/SubjectIcons";
+import { SlateIcon, ChatBubbleIcon } from "../icons/Illustrations";
+import { EleveTabs } from "../components/EleveTabs";
 import {
   badgesEleve,
   coursEnCoursEleve,
@@ -30,6 +32,8 @@ export function DashboardEleve() {
 
   return (
     <div>
+      <EleveTabs />
+
       <div className="dash-header">
         <div className="container" style={{ display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
           <Avatar seed={eleveConnecte.avatarSeed} size={72} />
@@ -104,6 +108,23 @@ export function DashboardEleve() {
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 26 }}>
+            <Panel titre="Mes outils">
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <ToolTile
+                  to="/eleve/ardoise"
+                  icon={<SlateIcon size={22} color="var(--terracotta)" />}
+                  titre="Ardoise intelligente"
+                  texte="Entraîne-toi à la craie et auto-corrige-toi"
+                />
+                <ToolTile
+                  to="/eleve/chat"
+                  icon={<ChatBubbleIcon size={22} color="var(--indigo)" />}
+                  titre="Chat"
+                  texte="Discute avec tes enseignants et camarades"
+                />
+              </div>
+            </Panel>
+
             <Panel titre="Mes badges">
               <div className="badge-grid">
                 {badgesEleve.map((b) => (
@@ -141,6 +162,30 @@ export function DashboardEleve() {
         <div style={{ height: 56 }} />
       </div>
     </div>
+  );
+}
+
+function ToolTile({ to, icon, titre, texte }: { to: string; icon: React.ReactNode; titre: string; texte: string }) {
+  return (
+    <Link
+      to={to}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        background: "var(--cotton-deep)",
+        borderRadius: "var(--radius-sm)",
+        padding: "14px 16px",
+      }}
+    >
+      <div style={{ width: 40, height: 40, borderRadius: 12, background: "var(--white)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+        {icon}
+      </div>
+      <div>
+        <p style={{ fontWeight: 700, fontSize: "0.92rem" }}>{titre}</p>
+        <p style={{ color: "var(--ink-soft)", fontSize: "0.8rem" }}>{texte}</p>
+      </div>
+    </Link>
   );
 }
 

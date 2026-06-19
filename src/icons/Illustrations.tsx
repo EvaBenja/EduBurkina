@@ -105,3 +105,24 @@ export function BookStackIcon({ size = 24, color = "currentColor" }: { size?: nu
     </svg>
   );
 }
+
+export function SlateIcon({ size = 24, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <rect x="3" y="3.5" width="18" height="13" rx="2" fill={color} opacity="0.16" />
+      <rect x="3" y="3.5" width="18" height="13" rx="2" stroke={color} strokeWidth="1.6" />
+      <path d="M7 8.5c2-1.4 4-1.4 5 0 1.6-1.6 3.4-1.6 5 0" stroke={color} strokeWidth="1.6" fill="none" strokeLinecap="round" />
+      <path d="M9 20.5h6M12 16.5v4" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function ChatBubbleIcon({ size = 24, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path d="M4 5.5h16v10.5H10.5L6 19.5V16H4Z" fill={color} opacity="0.16" />
+      <path d="M4 5.5h16v10.5H10.5L6 19.5V16H4Z" stroke={color} strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M8 9.5h8M8 12.3h5" stroke={color} strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
