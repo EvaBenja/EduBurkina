@@ -1,0 +1,76 @@
+.auth-shell {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 140px);
+}
+
+.auth-illustration-panel {
+  background: linear-gradient(160deg, var(--indigo) 0%, var(--indigo-deep) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px;
+  position: relative;
+}
+
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 32px;
+}
+
+.role-tabs {
+  display: flex;
+  gap: 8px;
+  background: var(--cotton-deep);
+  padding: 6px;
+  border-radius: 100px;
+  margin-bottom: 28px;
+}
+
+.role-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.role-tab.active {
+  background: var(--terracotta);
+  color: var(--white);
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.86rem;
+  margin-bottom: 7px;
+  color: var(--ink);
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--cotton-deep);
+  background: var(--cotton);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+@media (max-width: 880px) {
+  .auth-shell { grid-template-columns: 1fr; }
+  .auth-illustration-panel { padding: 36px 28px; min-height: 220px; }
+}

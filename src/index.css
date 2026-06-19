@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap");
+
+:root {
+  /* --- Palette : tissée comme un Faso Dan Fani --- */
+  --cotton: #FAF3E5;
+  --cotton-deep: #F0E4CC;
+  --ink: #2B231C;
+  --ink-soft: #5C5247;
+  --indigo: #21384A;
+  --indigo-deep: #152734;
+  --indigo-soft: #3C5A70;
+  --terracotta: #D9692D;
+  --terracotta-deep: #B8551F;
+  --green: #3F7D4D;
+  --green-deep: #2F5E3A;
+  --gold: #E8AC3D;
+  --gold-deep: #C8911F;
+  --white: #FFFFFF;
+
+  --font-display: "Baloo 2", "Trebuchet MS", sans-serif;
+  --font-body: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
+  --shadow-card: 0 10px 30px -12px rgba(33, 56, 74, 0.25);
+  --shadow-pop: 0 18px 40px -16px rgba(33, 56, 74, 0.35);
+
+  --stripe-band: linear-gradient(
+    90deg,
+    var(--terracotta) 0%, var(--terracotta) 16%,
+    var(--gold) 16%, var(--gold) 34%,
+    var(--cotton) 34%, var(--cotton) 50%,
+    var(--green) 50%, var(--green) 66%,
+    var(--indigo) 66%, var(--indigo) 84%,
+    var(--terracotta) 84%, var(--terracotta) 100%
+  );
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cotton);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0; line-height: 1.6; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font-family: inherit; cursor: pointer; }
+
+img, svg { display: block; max-width: 100%; }
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.stripe-divider {
+  height: 6px;
+  width: 100%;
+  background: var(--stripe-band);
+}
+
+.stripe-divider.thin { height: 4px; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 13px 26px;
+  border-radius: 100px;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--terracotta);
+  color: var(--white);
+  box-shadow: 0 10px 24px -10px rgba(217, 105, 45, 0.6);
+}
+.btn-primary:hover { background: var(--terracotta-deep); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--indigo);
+  border: 1.5px solid var(--indigo);
+}
+.btn-outline:hover { background: rgba(33, 56, 74, 0.06); }
+
+.btn-light {
+  background: var(--white);
+  color: var(--indigo);
+}
+.btn-light:hover { background: var(--cotton); }
+
+@media (max-width: 720px) {
+  .container { padding: 0 18px; }
+}
